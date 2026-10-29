@@ -1,0 +1,9 @@
+[project]
+name = "thelawala-search"
+version = "1.0.0"
+description = "Explainable, offline grocery search with web and batch interfaces"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

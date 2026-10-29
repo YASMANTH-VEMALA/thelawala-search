@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+.coverage
+results.jsonl
+artifacts/
+dist/
+*.egg-info/
+.DS_Store
