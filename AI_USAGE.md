@@ -10,7 +10,7 @@ The user's main requests were:
 
 > “can you complete the assignment? tell me the approach and tech stacks ... the submission has to be clear ... maintain the code files and folders in a structured way”
 
-The user later specified **“Keep it local for now”** when asked about publishing a GitHub repository. No remote repository was created and nothing was submitted to the hiring team.
+The user initially requested local-only preparation, then explicitly authorized a final cross-check and GitHub push. The repository is prepared for private publication under YASMANTH-VEMALA/thelawala-search. No message or submission has been sent to the hiring team.
 
 The assistant's working approach was to:
 

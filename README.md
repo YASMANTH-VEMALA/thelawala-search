@@ -6,9 +6,11 @@ An offline grocery search engine for the supplied Hyderabad catalog. It understa
 
 ## Quick start
 
-Open a terminal **inside this repository** (the folder containing this README):
+Clone the repository, then open a terminal **inside it** (the folder containing this README):
 
 ```sh
+git clone https://github.com/YASMANTH-VEMALA/thelawala-search.git
+cd thelawala-search
 python --version
 python -m thelawala serve
 ```
@@ -166,4 +168,4 @@ The index uses memory proportional to product tokens plus aggregated log signals
 
 ## Submission
 
-The assignment asks for a **Git repository link**, code history, this README, and [AI_USAGE.md](AI_USAGE.md). The work is committed locally; no GitHub repository was created or pushed because the user requested local-only preparation. [docs/DEMO.md](docs/DEMO.md) covers publishing, reviewer access, and a live walkthrough. Local commits made by the assistant are attributed to `Codex <codex@localhost>` rather than claiming to be manually authored by the candidate.
+The assignment asks for a **Git repository link**, code history, this README, and [AI_USAGE.md](AI_USAGE.md). Repository: [YASMANTH-VEMALA/thelawala-search](https://github.com/YASMANTH-VEMALA/thelawala-search). The repository is private; reviewers must be granted access before they can open or clone it. [docs/DEMO.md](docs/DEMO.md) covers publishing, reviewer access, and a live walkthrough. Local commits made by the assistant are attributed to `Codex <codex@localhost>` rather than claiming to be manually authored by the candidate.

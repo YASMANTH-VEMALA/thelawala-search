@@ -37,24 +37,17 @@ Explain why the engine needs neither an LLM nor a database server for 1,102 prod
 
 Do not modify the original supplied files just for a demonstration.
 
-## Publishing later
+## Repository and reviewer access
 
-The user requested local-only preparation. This repository has a `main` branch and incremental commits; no remote is configured. When ready, create a GitHub repository under the intended account, ensure the reviewer can access it, and push this folder. Do not initialize the new remote with a separate README/history.
+Repository: https://github.com/YASMANTH-VEMALA/thelawala-search
 
-```sh
-git status
-git log --oneline
-git remote add origin https://github.com/YOUR_ACCOUNT/YOUR_REPOSITORY.git
-git push -u origin main
-```
+The repository uses the `main` branch and preserves incremental development commits. It is private: invite the reviewer using their confirmed GitHub username before sending the link. A private URL alone does not grant access. The local demo URL is only accessible on the computer running the app; reviewers should clone the repository and follow the README.
 
-`YOUR_ACCOUNT` and `YOUR_REPOSITORY` are placeholders to replace. If the repository is private, invite the reviewer; a private URL alone is not sufficient. Do not include generated `__pycache__`, a virtual environment, or local scratch output. The `.gitignore` already excludes these.
+Generated caches, virtual environments, and scratch output are excluded by `.gitignore`. Original inputs, runnable code, tests, measured reports, and documentation are included.
 
 ## Suggested submission note
 
-Replace the bracketed URL after publishing:
-
-> Thelawala Search submission: [repository URL]
+> Thelawala Search submission: https://github.com/YASMANTH-VEMALA/thelawala-search
 >
 > The repository includes an offline Python search engine, a single-box web demo, and the required JSONL batch interface. The README covers setup, ranking, data assumptions, evaluation, and next steps. AI usage and discovered mistakes are documented in AI_USAGE.md. Please start with `python -m thelawala serve` or `python -m thelawala batch examples/queries.txt`.
 
