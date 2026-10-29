@@ -1,0 +1,239 @@
+{
+  "catalog_rows": 1102,
+  "inventory_rows": 1070,
+  "categories": {
+    "Dairy & Eggs": 158,
+    "Atta, Rice & Dal": 187,
+    "Beverages": 108,
+    "Personal Care": 114,
+    "Bakery & Snacks": 259,
+    "Fruits & Vegetables": 74,
+    "Oils & Ghee": 32,
+    "Masala & Spices": 82,
+    "Baby Care": 18,
+    "Household": 50,
+    "Frozen": 20
+  },
+  "brands": 39,
+  "missing_descriptions": 360,
+  "missing_inventory": [
+    "MF22780",
+    "MF36156",
+    "MF89292",
+    "MF96262",
+    "TW10132",
+    "TW10143",
+    "TW10538",
+    "TW13044",
+    "TW13884",
+    "TW22911",
+    "TW29520",
+    "TW32755",
+    "TW33995",
+    "TW35203",
+    "TW36770",
+    "TW39437",
+    "TW40399",
+    "TW42357",
+    "TW42394",
+    "TW45381",
+    "TW47687",
+    "TW50558",
+    "TW50677",
+    "TW51553",
+    "TW51968",
+    "TW59118",
+    "TW59368",
+    "TW62001",
+    "TW64970",
+    "TW65037",
+    "TW68821",
+    "TW73046",
+    "TW75320",
+    "TW75820",
+    "TW76683",
+    "TW76814",
+    "TW78744",
+    "TW79429",
+    "TW80872",
+    "TW83496",
+    "TW97331"
+  ],
+  "orphan_inventory": [
+    "TW17042",
+    "TW25972",
+    "TW28634",
+    "TW32440",
+    "TW54044",
+    "TW71281",
+    "TW87382",
+    "TW90052",
+    "TW93620"
+  ],
+  "available_products": 898,
+  "discontinued_products": 82,
+  "out_of_stock_products": 81,
+  "supplier_price_divisors": {
+    "metro_feed": 100,
+    "thela_direct": 1,
+    "local_vendor": 1
+  },
+  "price_flags": [
+    {
+      "sku_id": "TW89432",
+      "name": "Purely Bath Soap - Lime 4 pcs",
+      "raw_price": "5",
+      "normalized_price": "5.00",
+      "issue": "Soap pack price per piece is below one quarter of a 100 g bar; verification required"
+    },
+    {
+      "sku_id": "TW26791",
+      "name": "Lemon Local Farm",
+      "raw_price": "1022",
+      "normalized_price": "1022.00",
+      "issue": "Produce unit price exceeds category median by 30x; verification required"
+    },
+    {
+      "sku_id": "MF60949",
+      "name": "SPARKLE BATH SOAP - SANDAL 4 NOS",
+      "raw_price": "500",
+      "normalized_price": "5.00",
+      "issue": "Soap pack price per piece is below one quarter of a 100 g bar; verification required"
+    },
+    {
+      "sku_id": "TW95627",
+      "name": "Herbaleaf Bath Soap - Lime 4 pcs",
+      "raw_price": "5",
+      "normalized_price": "5.00",
+      "issue": "Soap pack price per piece is below one quarter of a 100 g bar; verification required"
+    },
+    {
+      "sku_id": "TW13626",
+      "name": "Thela Fresh Lemon 250 g",
+      "raw_price": "1012",
+      "normalized_price": "1012.00",
+      "issue": "Produce unit price exceeds category median by 30x; verification required"
+    },
+    {
+      "sku_id": "TW87140",
+      "name": "Herbaleaf Bath Soap - Sandal 4 pcs",
+      "raw_price": "5",
+      "normalized_price": "5.00",
+      "issue": "Soap pack price per piece is below one quarter of a 100 g bar; verification required"
+    },
+    {
+      "sku_id": "TW99611",
+      "name": "Thela Fresh Royal Gala Apple 1 kg",
+      "raw_price": "22264",
+      "normalized_price": "22264.00",
+      "issue": "Produce unit price exceeds category median by 30x; verification required"
+    },
+    {
+      "sku_id": "TW48733",
+      "name": "Thela Select Bath Soap - Neem 4 pcs",
+      "raw_price": "5",
+      "normalized_price": "5.00",
+      "issue": "Soap pack price per piece is below one quarter of a 100 g bar; verification required"
+    },
+    {
+      "sku_id": "TW87990",
+      "name": "Purely Bath Soap - Neem",
+      "raw_price": "5",
+      "normalized_price": "5.00",
+      "issue": "Soap pack price per piece is below one quarter of a 100 g bar; verification required"
+    },
+    {
+      "sku_id": "TW10538",
+      "name": "royal gala apple (Local Farm)",
+      "raw_price": "23068",
+      "normalized_price": "23068.00",
+      "issue": "Produce unit price exceeds category median by 30x; verification required"
+    },
+    {
+      "sku_id": "TW34717",
+      "name": "Shimla Apple Local Farm",
+      "raw_price": "23068",
+      "normalized_price": "23068.00",
+      "issue": "Produce unit price exceeds category median by 30x; verification required"
+    },
+    {
+      "sku_id": "TW98994",
+      "name": "Thela Select Bath Soap - Lime",
+      "raw_price": "5",
+      "normalized_price": "5.00",
+      "issue": "Soap pack price per piece is below one quarter of a 100 g bar; verification required"
+    },
+    {
+      "sku_id": "TW63512",
+      "name": "Thela Fresh Shimla Apple 1 kg",
+      "raw_price": "22264",
+      "normalized_price": "22264.00",
+      "issue": "Produce unit price exceeds category median by 30x; verification required"
+    },
+    {
+      "sku_id": "TW95235",
+      "name": "Herbaleaf Bath Soap - Neem 4 pcs",
+      "raw_price": "5",
+      "normalized_price": "5.00",
+      "issue": "Soap pack price per piece is below one quarter of a 100 g bar; verification required"
+    },
+    {
+      "sku_id": "MF91774",
+      "name": "SPARKLE BATH SOAP - NEEM 4 NOS",
+      "raw_price": "500",
+      "normalized_price": "5.00",
+      "issue": "Soap pack price per piece is below one quarter of a 100 g bar; verification required"
+    },
+    {
+      "sku_id": "TW74949",
+      "name": "Purely Bath Soap - Sandal 4 pcs",
+      "raw_price": "5",
+      "normalized_price": "5.00",
+      "issue": "Soap pack price per piece is below one quarter of a 100 g bar; verification required"
+    },
+    {
+      "sku_id": "MF56288",
+      "name": "SPARKLE BATH SOAP - LIME 4 NOS",
+      "raw_price": "500",
+      "normalized_price": "5.00",
+      "issue": "Soap pack price per piece is below one quarter of a 100 g bar; verification required"
+    }
+  ],
+  "logs": {
+    "searches": 6578,
+    "zero_results": 2782,
+    "events": 7555,
+    "sponsored_events_ignored": 108,
+    "unique_raw_queries": 1446,
+    "sessions": 3600,
+    "first_timestamp": "2026-08-15T07:09:58+05:30",
+    "last_timestamp": "2026-10-10T21:54:22+05:30",
+    "training_cutoff_exclusive": "2026-10-12"
+  },
+  "as_of": "2026-10-12",
+  "expired_restock_estimates": [
+    "TW84675",
+    "TW79891",
+    "MF93768",
+    "TW41232",
+    "MF62364",
+    "TW20750",
+    "TW48821",
+    "MF18405",
+    "TW31189",
+    "TW99244",
+    "TW55033",
+    "MF24895",
+    "TW99052",
+    "MF57905",
+    "TW11068",
+    "TW62406",
+    "TW47355",
+    "TW51920",
+    "TW94451",
+    "TW55362",
+    "MF15565",
+    "TW46084",
+    "TW11854"
+  ]
+}

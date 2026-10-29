@@ -1,0 +1,9 @@
+{
+  "products": 20000,
+  "queries": 189,
+  "startup_ms": 2832.31,
+  "p50_ms": 7.269,
+  "p95_ms": 49.559,
+  "max_ms": 69.906,
+  "limitations": "Synthetic repetition of the 1102-product vocabulary; measures candidate-volume scaling, not vocabulary growth, concurrent load, memory use or relevance on a real 20k catalog."
+}

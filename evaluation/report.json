@@ -1,0 +1,57 @@
+{
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows",
+    "processor": "AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD"
+  },
+  "as_of": "2026-10-12",
+  "startup_ms": 752.2,
+  "curated": {
+    "total": 63,
+    "passed": 63,
+    "failed": 0,
+    "failures": []
+  },
+  "temporal_proxy": {
+    "train_before": "2026-10-01",
+    "test_from": "2026-10-01",
+    "test_before": "2026-10-12",
+    "unique_raw_queries_with_eligible_cart_positives": 270,
+    "cross_boundary_sessions_excluded": 0,
+    "metrics": {
+      "lexical_only": {
+        "hit_rate_at_10": 0.8148,
+        "mrr_at_10": 0.4162
+      },
+      "with_training_logs": {
+        "hit_rate_at_10": 0.8296,
+        "mrr_at_10": 0.5468
+      },
+      "literal_substring": {
+        "hit_rate_at_10": 0.5259,
+        "mrr_at_10": 0.3964
+      }
+    },
+    "limitations": [
+      "Implicit cart labels reflect the old search system, not complete relevance judgments.",
+      "Eligibility uses current inventory; no historical inventory snapshots exist.",
+      "Queries are equally weighted; normalized duplicate SKU identities count as equivalent.",
+      "Curated cases were authored during development and are regression checks, not blind evaluation.",
+      "Literal substring is an intentionally simple baseline without query interpretation."
+    ]
+  },
+  "latency": {
+    "first_pass": {
+      "p50_ms": 0.924,
+      "p95_ms": 4.081,
+      "max_ms": 7.921,
+      "queries": 1446
+    },
+    "warm_pass": {
+      "p50_ms": 0.327,
+      "p95_ms": 1.639,
+      "max_ms": 8.891,
+      "queries": 1446
+    }
+  }
+}
