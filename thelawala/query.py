@@ -93,6 +93,10 @@ class QueryParser:
 
     @lru_cache(maxsize=8192)
     def parse(self, original: str, *, fuzzy: bool = True) -> Query:
+        # Reject negative amounts before punctuation normalization can erase
+        # their sign and silently turn them into positive constraints.
+        if re.search(r"(?<!\w)-\s*(?:₹\s*|rs\.?\s*)?\d", original, re.IGNORECASE):
+            return Query(original, "", (), warnings=("Prices and pack sizes cannot be negative.",))
         text = self.normalizer.canonical(original)
         # Currency symbols were removed by normalization. Currency words are
         # optional before/after the amount, but only inside a price expression.
@@ -100,7 +104,7 @@ class QueryParser:
         max_price = min_price = None
         max_inclusive = min_inclusive = False
         warnings: list[str] = []
-        between = re.search(r"\bbetween\s+"+currency+r"(\d+(?:\.\d+)?)\s+(?:and|to)\s+"+currency+r"(\d+(?:\.\d+)?)", text)
+        between = re.search(r"\bbetween\s+"+currency+r"(\d+(?:\.\d+)?)(?:\s+(?:rupees|rs|inr))?\s+(?:and|to)\s+"+currency+r"(\d+(?:\.\d+)?)(?:\s+(?:rupees|rs|inr))?\b", text)
         if between:
             min_price, max_price = Decimal(between[1]), Decimal(between[2])
             min_inclusive = max_inclusive = True
@@ -143,6 +147,10 @@ class QueryParser:
             if len(possible) == 1:
                 brand = self.brands[possible[0]]
                 text = " ".join(t for t in text.split() if t not in pieces)
+        sizes = {(Decimal(match[1])*UNITS[match[2]][0], UNITS[match[2]][1])
+                 for match in SIZE.finditer(text)}
+        if len(sizes) > 1:
+            return Query(original, "", (), warnings=("Conflicting pack sizes; specify one pack size.",))
         quantity, unit = self.normalizer.size(text)
         text = SIZE.sub(" ", text)
         terms = tuple(t for t in text.split() if t not in STOP_WORDS)

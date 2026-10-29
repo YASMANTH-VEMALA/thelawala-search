@@ -132,7 +132,7 @@ python -m thelawala evaluate --output evaluation/report.json
 python scripts/benchmark_scale.py --products 20000 --output evaluation/scale_report.json
 ```
 
-Tests exercise the actual data, all 1,446 unique raw log queries for availability invariants, synthetic bias/cutoff cases, batch Unicode/blanks/duplicates/atomic failure, and the real HTTP handler. There are **17 test methods** and **63 curated behavior cases**. The curated cases were written during development; passing them is regression evidence, not a blind accuracy estimate.
+Tests exercise the actual data, all 1,446 unique raw log queries for availability invariants, synthetic bias/cutoff cases, batch Unicode/blanks/duplicates/atomic failure, and the real HTTP handler. There are **18 test methods** and **63 curated behavior cases**. The curated cases were written during development; passing them is regression evidence, not a blind accuracy estimate.
 
 Temporal evaluation trains behavior on dates **before 1 Oct**, then evaluates eligible non-sponsored cart additions from **1–10 Oct** (the available test dates). Cross-boundary sessions are excluded. On 270 raw query strings with eligible positives:
 
@@ -144,7 +144,7 @@ Temporal evaluation trains behavior on dates **before 1 Oct**, then evaluates el
 
 Hit rate asks whether any logged positive is in the first ten; MRR rewards placing the first positive earlier. Matching normalized duplicate identities counts as a hit. The report includes reproducible first-pass and warm latency, environment information, and limitations. Runtime timings vary by machine and load.
 
-The checked-in Windows/Python 3.12.10 run measured about **752 ms startup**, **4.08 ms first-pass p95**, and **1.64 ms warm p95** over all 1,446 raw query strings. The synthetic 20,000-product run measured **2.83 s startup** and **49.56 ms p95** over 189 searches. These are local process timings, not network latency or a concurrent-load SLA.
+The checked-in Windows/Python 3.12.10 run measured about **430 ms startup**, **2.22 ms first-pass p95**, and **1.29 ms warm p95** over all 1,446 raw query strings. The synthetic 20,000-product run measured **2.83 s startup** and **49.56 ms p95** over 189 searches. These are local process timings, not network latency or a concurrent-load SLA.
 
 **Limitations:** cart actions are incomplete relevance labels from the old interface. There are no full impression lists, purchases, or historical inventory snapshots. Current-stock filtering makes this a constrained proxy, and held-out logs do not prove production conversion gains. No real 20k catalog is supplied; the separate scale benchmark repeats the original vocabulary to measure candidate-volume scaling only.
 

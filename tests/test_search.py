@@ -109,6 +109,20 @@ class SearchTests(unittest.TestCase):
         self.assertEqual((Decimal(1000), "ml"), n.size("1LTR"))
         self.assertEqual((Decimal(12), "pcs"), n.size("Pack of 12"))
 
+    def test_price_range_currency_and_invalid_constraints(self):
+        expected = self.engine.search("oil between 100 and 200")["results"]
+        self.assertTrue(expected)
+        for query in ["oil between 100 and 200 rupees", "oil between Rs 100 and Rs 200",
+                      "oil between 100 rupees and 200 rupees"]:
+            self.assertEqual(expected, self.engine.search(query)["results"])
+        for query in ["milk under -50", "milk -500ml", "milk 500ml 1l"]:
+            response = self.engine.search(query, include_unavailable=True)
+            self.assertEqual([], response["results"])
+            self.assertEqual([], response["unavailable"])
+            self.assertTrue(response["warnings"])
+        self.assertEqual(self.engine.search("milk 500ml")["results"],
+                         self.engine.search("milk 500ml 0.5l")["results"])
+
     def test_no_logs_mode(self):
         engine = SearchEngine(use_logs=False)
         self.assertFalse(engine.behavior.weights)

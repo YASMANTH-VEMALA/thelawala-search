@@ -49,3 +49,7 @@ The failures show why generated code and generated test expectations both needed
 - Browser inspection of the local search page and results.
 
 All code and explanations should be checked against the committed reports. Local Git history was created incrementally, with assistant commits attributed to `Codex <codex@localhost>` because no local Git author identity was configured. Original input files were retained. No paid API, external search service, or embedding model is required to run this work.
+
+## Final submission review
+
+Fresh queries exposed three constraint-parser issues: currency words after a price range were retained as search terms, negative amounts lost their sign during normalization, and multiple conflicting sizes silently selected the first. These were fixed and covered by an additional regression test. The final suite passes 18 test methods and all 63 curated cases; the temporal evaluation metrics are unchanged.

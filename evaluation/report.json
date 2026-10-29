@@ -5,7 +5,7 @@
     "processor": "AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD"
   },
   "as_of": "2026-10-12",
-  "startup_ms": 752.2,
+  "startup_ms": 429.9,
   "curated": {
     "total": 63,
     "passed": 63,
@@ -42,15 +42,15 @@
   },
   "latency": {
     "first_pass": {
-      "p50_ms": 0.924,
-      "p95_ms": 4.081,
-      "max_ms": 7.921,
+      "p50_ms": 0.466,
+      "p95_ms": 2.217,
+      "max_ms": 4.921,
       "queries": 1446
     },
     "warm_pass": {
-      "p50_ms": 0.327,
-      "p95_ms": 1.639,
-      "max_ms": 8.891,
+      "p50_ms": 0.249,
+      "p95_ms": 1.293,
+      "max_ms": 4.023,
       "queries": 1446
     }
   }
