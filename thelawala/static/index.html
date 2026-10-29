@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#174c3c">
+  <title>Thelawala · Find your everyday</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="wordmark" href="/">thelawala<span>●</span></a><span class="location">HYDERABAD <span>•</span> Your neighbourhood, delivered.</span></header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">THE EVERYDAY, MADE EASIER</p>
+      <h1>A little typo.<br>A familiar name.<br><em>We get it.</em></h1>
+      <p class="lede">Milk, paalu, or పాలు. Find what you came for.</p>
+    </section>
+    <section class="search-area" aria-label="Product search">
+      <form id="search-form" role="search">
+        <label for="query">What's on your list?</label>
+        <div class="searchbox"><span aria-hidden="true">⌕</span><input id="query" name="q" type="search" maxlength="500" autocomplete="off" placeholder="Try milk, panner, or oil under 200"><button type="submit">Find it <span aria-hidden="true">↗</span></button></div>
+      </form>
+      <div class="suggestions"><span>TRY A SEARCH</span><button type="button" data-query="milk">milk</button><button type="button" data-query="పాలు">పాలు</button><button type="button" data-query="oil under 200">oil under ₹200</button><button type="button" data-query="butter without salt">butter without salt</button></div>
+      <p id="status" role="status" aria-live="polite">Good groceries start with a good search.</p>
+      <div id="interpretation"></div>
+      <section id="results-section" hidden><div class="section-title"><h2>Ready for your basket</h2><span id="count"></span></div><div id="results" class="product-grid"></div></section>
+      <section id="unavailable-section" hidden><div class="section-title"><h2>Also in our range</h2><span>Currently unavailable</span></div><p class="section-note">These matches cannot be ordered right now. Restock dates are estimates.</p><div id="unavailable" class="product-grid"></div></section>
+    </section>
+  </main>
+  <footer><span>Familiar favourites. A few new finds.</span><span id="snapshot">Catalog snapshot · 12 Oct 2026</span></footer>
+</body>
+</html>
