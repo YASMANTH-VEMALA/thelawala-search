@@ -8,7 +8,7 @@ import tempfile
 import unittest
 
 from thelawala.batch import run_batch
-from thelawala.data import DEFAULT_DATA, load_products, read_csv
+from thelawala.data import DEFAULT_DATA, read_csv
 from thelawala.evaluate import case_errors
 from thelawala.query import Normalizer, ROOT
 from thelawala.search import SearchEngine
@@ -41,6 +41,7 @@ class SearchTests(unittest.TestCase):
         queries = {json.loads(line)["query"] for line in (DEFAULT_DATA/"search_log.jsonl").read_text(encoding="utf-8").splitlines()}
         for query in queries:
             response = self.engine.search(query, include_unavailable=True)
+            parsed = self.engine.parser.parse(query)
             with self.subTest(query=query):
                 self.assertLessEqual(len(response["results"]), 10)
                 self.assertEqual(len(response["results"]), len({h["sku_id"] for h in response["results"]}))
@@ -53,6 +54,22 @@ class SearchTests(unittest.TestCase):
                 for hit in response["unavailable"]:
                     self.assertFalse(self.engine.products[hit["sku_id"]].available)
                     self.assertNotEqual("discontinued", self.engine.products[hit["sku_id"]].status)
+                for hit in response["results"] + response["unavailable"]:
+                    product = self.engine.products[hit["sku_id"]]
+                    if parsed.quantity is not None:
+                        self.assertEqual((parsed.quantity, parsed.unit), (product.quantity, product.unit))
+                    if parsed.max_price is not None:
+                        self.assertIsNone(product.price_issue)
+                        if parsed.max_inclusive:
+                            self.assertLessEqual(product.price, parsed.max_price)
+                        else:
+                            self.assertLess(product.price, parsed.max_price)
+                    if parsed.min_price is not None:
+                        self.assertIsNone(product.price_issue)
+                        if parsed.min_inclusive:
+                            self.assertGreaterEqual(product.price, parsed.min_price)
+                        else:
+                            self.assertGreater(product.price, parsed.min_price)
 
     def test_supplier_price_units_and_flags(self):
         self.assertEqual(Decimal("62.00"), self.engine.products["MF40423"].price)

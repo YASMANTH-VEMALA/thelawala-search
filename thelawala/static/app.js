@@ -35,6 +35,7 @@ function section(id, products) {
 }
 
 async function search(query) {
+  document.body.classList.toggle('searched', Boolean(query.trim()));
   controller?.abort();
   controller = new AbortController();
   const request = ++sequence;
